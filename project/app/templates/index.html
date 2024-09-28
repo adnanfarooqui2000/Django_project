@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbai Khajur Wala</title>
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<!-- HEADER STARTS HERE -->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/956/766/original/geometric-dates-tree-icon-arabian-dates-logo-vector.jpg" alt="Dates Logo">
+        <br><h6>ARABAI KHAJUR WALA<br><p>Inspired By Nature</p></h6>
+    </a>
+    <nav class="navbar">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#products">PRODUCTS</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+    <div class="button">
+        <a href="{% url 'register' %}">
+            <button type="button">Register</button>
+        </a>
+        <a href="{% url 'login' %}">
+            <button type="button">Login</button>
+        </a>
+    </div>
+</header>
+<!-- HOME SECTION STARTS HERE -->
+<section class="home" id="home">
+    <div class="content">
+        <h3>Fresh & Delightful Dates</h3>
+        <span>NATURAL AND HEALTHY SNACKS</span>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam sequi sunt, deleniti autem nulla quis voluptas error dolore, vel ipsam, mollitia doloribus itaque at. Corrupti vero temporibus ad a neque!</p>
+        <a href="#" class="btn">Shop Now</a>
+    </div>
+</section>
+<!-- HOME SECTION ENDS HERE -->
+<!-- ABOUT SECTION STARTS -->
+ <section class="about" id="about">
+    <h1 class="heading"><span>ABOUT</span>US</h1>
+    <div class="row">
+        <div class="img">
+            <img style="height: auto; width: 100%;" src="https://sublimehouseoftea.com/cdn/shop/articles/dates-their-varieties-and-their-benefits-226505.jpg?v=1664530713" alt="Dates">
+            <h3 style="justify-content: center;">Best Dates Sellers</h3>
+        </div>
+        <div class="content">
+            <h3>Why choose us?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, illum. Optio dolor magni eaque laborum! Magni earum ea iusto labore repudiandae laudantium numquam consequatur, adipisci iure excepturi? Explicabo, blanditiis et!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat itaque illum similique sapiente numquam velit, corporis reprehenderit. Sed esse laborum doloribus tempore est vero. Incidunt nihil distinctio at pariatur repudiandae!</p>
+            <a href="#" class="btn"> Learn More</a>
+        </div>
+    </div>
+ </section>
+<!-- ABOUT SECTION ENDS -->
+<!-- ICON STARTS  -->
+<section class="icon-container">
+    <div class="icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/66/66841.png" alt="">
+      <div class="info"></div>
+       <h3>FREE DELIVERY</h3>
+       <span>On All Orders</span>
+       </div>
+    </div>
+    <div class="icon">
+        <img src="data:image/png;base64,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" alt="">
+       <div class="info">
+       <h3>10 DAYS RETURNS</h3>
+       <span>Money-Back Guarantee</span>
+       </div>
+    </div>
+    <div class="icon">
+       <img src="https://cdn-icons-png.flaticon.com/512/2611/2611152.png" alt="">
+       <div class="info"></div>
+       <h3>OFFERS & GIFTS</h3>
+       <span>On All Orders</span>
+       </div>
+    </div>
+    <div class="icon">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQIAAADDCAMAAABeUu/HAAAAdVBMVEX///8AAABiYmLu7u5fX19QUFAXFxf4+Pjc3NwZGRm5ubkvLy/m5uZbW1scHByVlZU3NzeDg4OPj4+JiYnU1NSysrLg4ODOzs5MTEz19fV5eXlvb2+4uLhGRkYkJCTCwsKnp6cQEBBra2s/Pz+cnJwjIyNBQUGznfL4AAAGcElEQVR4nO2d55qqMBBAB8XFtSLKKqwFttz3f8SLSxNNwgSGpnP++RFjcoQkpAJkeEf/dDaGTXjauGOoyOKr6+STcdhXMuB3nW5Sviz9W2DedaKJCaeaBvZdp7gBdloGpl0ntxE+NAx4Yf69iTkaMuYkz0qooSCrCpZ6N08/2WcWPtHf2aVfmTWYsDZx0wyhi8RlhWen36Rl2wgZ3kvCXxpNVbvMkjx5uODHpBxoNlEtM9F6tDdx6GcoCXOShs4GFzoR1myS2saKM3XChY6bxpNmk9Q69l+uzrjA73+BzWZT1DqHv1y94wK/PaWCCStgBayAFQArAFYArABYAbACYAXACoAVACsAVgCVFCy98TPhVegveE5YAStgBQYrMFiBwQoMVmCwAoMVGKzAYAUGK4hYsQLDXAow/fVx8TIK5NiB9eoKIlxWYCytl1dg2N7LKzDO1ssriKeZaStwdpUX//SE8c7JcvMD2gp8/SUvfcTKFiKNdRUEXaedjCDJ0UZTAXJG6yDYJnnSU/DbdbJJ+Y0ztddS4JbHOyCSOfhrLQVDrwqKJHO1RzoK7K4TTcz3X67mOgqQc9sHQ7wkaaWj4Nlm7Jt/uXpjBe+sgBWwAlbAClgBK2AFdwrsn7WCn/AFFJSsc1+9gIKSCbjvrIAVsAJWACgF08DZqHCC3m2WQqtgfMC0K5B7i7QFqYIPhIArC2kMXUCpwEIawE7+aQlKBRusAmNNnY06UCpAG+jXtjGECnR2yutTtUCoYCfN8CO6WzE2SUcK+rSFFKECa4GnTzM0uIFMWxyucqJ6bxPefnIKV1+iLHAKzQQnm83xQsUhK2AFrIAVsAJWwApYAStgBayAFdyyLZy7sr3rW31SBeBZOZ4Flif5FH2mzkYduMuE+w65Bxl4HAFoe5A1FJDnowaUxeEIbQB/ik0LUCpYoBX0anUTaaU4k+a5SL/OpKFtF+BOYetTjQi5AtQpGYimkeufbBUH/0iZfAq4dcgKWAGwAmAFwAqAFQArAFYArABYAbACYAUwXAXePvBH5qfjit68d67zaY78YI8arximgkt6JHLEm1/si/3wb1beLhG9M0NUcJkbRcx8mcvCvLs2L5UwQAWfxiNOcs0RXPsqiY90THFKinisYbwS5DJNlHh12ErdW0uoQPTv1ENwRrQnC2tbYN0/IBlKB3QKTqS5j3l8jsX3wBVbbsB4V1UNqYI46pLzxlUKLoQ5zwjvf2VSMSLVjlypgtjgd3UFooKoPncrGn8qR/RTriAZDFOvFlEpWNfOroiigjFZTCIFyZ+o7uRXKcCNomgyL/4GfiHkI36pguRRVh9PriwO6SuE+3EnnaHrR6QlYqogXWfpyAKWKoD1uVYSH1netQyOtWKT7tWZKUhvsqCyguhvokWc1qpI92nJFGRFjWJ7244byDXvMlm0mYKbCme9kzw33e5oU6c+uCIrDHIFkgb2I10pwM/gECMb079RYP32W4HOjDYRe0m8NwrAs19eAXLC1BM/CFfcHiuoWxzK3pjvFEQVg/yVs2MFSZ1cGVm0DwqiG+7ofIlPGupYQdU35RhpR4BAgRx1u2A2mVfHdsq3NAhUOSxF+rqspUDZOqzbYbAqdVCvMJC+LZMpqFtlYWbl1nlJkHeIkSkg6DUq/f061aJ8+j+ZAl/1+zjKh7+25ZFIkPeY0CmoV1ZdmQvjLVL1ZVFV0JApsGofPoWZnK0oEcNpKL+oWgJCVyMscG8YUgJUEuRLXz4UG+0pJ37TKYiSN6vM8YLd6UjiYHWt8xaSO1G9EopSQTt4on6NUWJQVG1OShaADE+B4F0uzAcfL+H9xdIjjoaoIKp+bgcwv4uZdP/dXDsF5ZENU0FUNcy2n4ezffDdx9t87PoH+3z42s5Qa6CGqoAQVsAKWAGwAmAFwAqAFQArAFYArABYAbACYAXACoAVQH68LIpYwaHZFLVOrAB5eEk8GenZjpqOu2MxAzkRSa9cn3b2J8DQebyTGaqyeUvDJJk/vsWFPmoJGwjJ3BXBIiAR6YgeMvggSFfTYHehTAdr+rRXXz3ScciSVVk52YBev7boqk62ogr/p2brLsxnKBN32RCkztZ7Rs7EHA2aZT7D8k2nnsceljcs9Mq2+jPL+ofu1nsf8gWjw+RX/3hHq4m1aN2hmIumYFpvNnCfGFXei3fsbk5h18mvSTj33Zs24X94yosQEHeepgAAAABJRU5ErkJggg==" alt="">
+      <div class="info">
+       <h3>SECURE PAYMENT</h3>
+       <span>Protected By Paytm</span>
+       </div>
+    </div>
+ </section>
+ <!-- ICON ENDS -->
+<!-- PRODUCTS STARTS -->
+ <section class="products" id="products">
+    <h1 class="heading">OUR<span>PRODUCT'S</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2020/12/QE/WK/MZ/116890810/ajwa-dates.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Ajwa Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpEFJL4HilzClOXdx87m_TBBEWKx_nIaLYIJDX1beHlLWPZ7Za4B8KNPSleoGeLjdN-Zw&usqp=CAU" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Amber Dates</h3>
+                    <div class="price">$10.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://nutnutties.com/wp-content/uploads/2021/09/Medjool-Dates-Premium.png" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Medjoul Dates</h3>
+                    <div class="price">$11.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrCFh14CU3Ontxict8nwjgsHO_877nGkUXjMNk7jgyUbnPHhsQn4PIyWbiF8uZAedhznU&usqp=CAU" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Kalmi Dates</h3>
+                    <div class="price">$9.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://d11qgm9a5k858y.cloudfront.net/9vrcr73t3elodzdxt7w50jb7nyvx" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Sugai Dates</h3>
+                    <div class="price">$8.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://royaldryfruits.biz/wp-content/uploads/2022/05/mabroom-dates.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Mabroom Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI_2NC5vhchH9dYnobkTdwBaOSugRFTcMuIA&s" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Rutab Sukkrai Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://cdn.ecommercedns.uk/files/8/252318/4/27652024/dates-rabia.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Rabia Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://www.houseofrasda.com/cdn/shop/products/RasdaMashrookDates.png?v=1721654950" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Mashrook Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://thumbs.dreamstime.com/b/pile-sweet-dates-saudi-khudri-white-background-102681811.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Khudri Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYLj4FyT-P6k6imy5sIkirLwEHhWv_u1__8VMfPhBcpyezcdUWgQTxNnJccXKLKeSPa3I&usqp=CAU" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Berni Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/10/XU/NT/RA/58978998/sufari-saudi-fresh-dates-500x500.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Sufri Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://bositrade.com/wp-content/uploads/2013/09/iranian-date-buy.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Date Land Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://handfulofhealth.in/cdn/shop/files/ABD_Fard.jpg?v=1705407296&width=1445" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Fard Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://www.manueltavares.com/Uploads/Artigos/t0o8ilg10276.png" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Tunish Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPNq9hNwUStPK5Hw3x6s9e-uVm23_1uJTgUA&s" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Deglet Nour Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://5.imimg.com/data5/TA/NO/MY-40922799/dry-black-dates.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Jumeria Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://www.yuzzo.in/wp-content/uploads/2020/06/Mariyam-Dates.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Mariyam Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://images.jdmagicbox.com/quickquotes/images_main/rabbi-dates-1-kg-382113179-iyad1.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>black-Rabbi Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Q9hQmF99qEfHL0iYRhm9yCMMRXYSXqg31A&s" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Brown-Rabbi Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://img3.21food.com/img/product/2020/11/20/food3052931605840120648020.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Dry-Mazafati Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNm1wePYCDI7wDIxIWyufWYZvykzn9vXr2PQ&s" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Mazafati Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://5.imimg.com/data5/AP/FH/MY-18804676/dma001-mabroom-dates-1kg-imported-dates-from-saudi-500x500.png" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Seedless Sugai Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/377964674/CP/MV/UN/140743525/mejdool-premium-dates-madina-munwaraah-500x500.jpeg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Medina Special Medjoul Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://m.media-amazon.com/images/I/61edP3wXgVL._AC_UF1000,1000_QL80_.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Zhaidi Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://i0.wp.com/albarakahdatesfactory.com/wp-content/uploads/2023/01/Naghal-Dates.jpg?fit=1080%2C1080&ssl=1" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Neghal Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://zamzamtradingbd.com/public/uploads/all/4ScalyBucTGsdEmbCzW4tOQfPyLAXf4Gj4DB5bdl.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Ajwa Seed Powder Dates</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <span class="discount"> -20%</span>
+            <div class="image">
+                <img src="https://skinnyms.com/wp-content/uploads/2021/03/Homemade-Date-Syrup-1-Yum-e1706733771644.jpg" alt="dates">
+                <div class="icon">
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="cart-btn">Add Ta Cart</a>
+                    <a href="#" class="fas fa-share"></a>
+                </div>
+                <div class="content">
+                    <h3>Medjoul Syrup</h3>
+                    <div class="price">$12.99 <span>$15.55</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+<!-- PRODUCTS END -->
+<!-- REVIEWS STARTS -->
+<section class="reviews" id="reviews">
+    <h1 class="heading">CUSTOMER<span>'S</span> REVIEWS</h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, est sequi incidunt nostrum aliquam id praesentium et tempore ipsa quia neque iste tenetur omnis reprehenderit dolore vel cum aut necessitatibus!</p>
+            <div class="user">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Prime_Minister_Trudeau_delivers_a_message_on_Eid_al-Fitr_-_2020_%28cropped%29.jpg/220px-Prime_Minister_Trudeau_delivers_a_message_on_Eid_al-Fitr_-_2020_%28cropped%29.jpg" alt="Justin Leon">
+                <div class="user-info">
+                    <h3>Justin Leon</h3>
+                    <span>Happy Customer</span>
+                </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+        </div>
+        <div class="box">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, est sequi incidunt nostrum aliquam id praesentium et tempore ipsa quia neque iste tenetur omnis reprehenderit dolore vel cum aut necessitatibus!</p>
+            <div class="user">
+                <img src="https://cdn.britannica.com/30/215930-050-C843AA62/British-American-actor-Andrew-Garfield-2018.jpg" alt="Andrew Peter">
+                <div class="user-info">
+                    <h3>Andrew Peter</h3>
+                    <span>Happy Customer</span>
+                </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+        </div>
+        <div class="box">
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, est sequi incidunt nostrum aliquam id praesentium et tempore ipsa quia neque iste tenetur omnis reprehenderit dolore vel cum aut necessitatibus!</p>
+            <div class="user">
+                <img src="https://yt3.googleusercontent.com/Fft-98080C_zLPTPbxA3FJGRvHxGTHgojRdlyH_-YWjDzWDe3tVSsV6CPyEV-h1_iaIGZxJIJmM=s900-c-k-c0x00ffffff-no-rj" alt="Laura Lisa">
+                <div class="user-info">
+                    <h3>Laura Lisa</h3>
+                    <span>Happy Customer</span>
+                </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+        </div>
+    </div>
+</section>
+<!-- REVIEWS ENDS -->
+<!-- Contact section start -->
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Contact</span> Us</h1>
+    <div> 
+        <form action="#">
+            <input type="text" placeholder="Name" class="box">
+            <input type="email" placeholder="Email" class="box">
+            <input type="number" placeholder="Number" class="box">
+            <textarea class="box" placeholder="Message" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        <div class="image">
+            <img src="https://www.tasteatlas.com/images/articles/705c956db47f4fa293c64beea386afa0.jpg" alt="photo">
+        </div>
+    </div>
+</section>
+ <!-- contact section ends -->
+<!-- FOOTER STARTS HERE-->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Reviews</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href="#">My Account</a>
+            <a href="#">My Order</a>
+            <a href="#">My Favorite</a>
+        </div>
+        <div class="box">
+            <h3>Locations</h3>
+            <a href="#">India</a>
+            <a href="#">Canada</a>
+            <a href="#">Turkey</a>
+            <a href="#">Malaysia</a>
+            <a href="#">Japan</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">info@gmail.com</a>
+            <a href="#">Bhopal, India - 462001</a>
+            <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2023-06/08/full/1686205521-1934.png" alt="credit cards">
+        </div>
+    </div>
+    <div class="credit">Created By <span> : XYZ Pvt Ltd</span>&copy; 2024 Your Company. All rights reserved.</div>
+</section>
+<!-- FOOTER ENDS HERE-->
+</body>
+</html>

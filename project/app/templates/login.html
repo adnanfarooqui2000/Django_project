@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arbai Khajur Wala - Login</title>
+        <!-- Font Awesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Custom CSS File Link -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+    <!-- Page Heading -->
+    <h1 class="text-center">Login Page</h1>
+
+    <div class="form-container text-center">
+        {{ msg }}
+        <form action="{% url 'dashboard' %}" method="post" class="login-form">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Enter Your Email" class="form-input" required>
+            <input type="password" name="password" placeholder="Enter Your Password" class="form-input" required>
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

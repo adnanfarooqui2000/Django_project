@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbai Khajur Wala</title>
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<!-- HEADER STARTS HERE -->
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/956/766/original/geometric-dates-tree-icon-arabian-dates-logo-vector.jpg" alt="Dates Logo">
+        <br><h6>ARABAI KHAJUR WALA<br><p>Inspired By Nature</p></h6>
+    </a>
+    <nav class="navbar">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#products">PRODUCTS</a>
+        <a href="#reviews">REVIEWS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        <button action="{% url 'logout' %}" type="submit" class="logout">Logout</button>
+    </form> 
+</header>
+<section>
+    <h1>Welcome, {{ name }}</h1>
+    <p>Your email: {{ email }}</p>
+    <p>Contact: {{ contact }}</p>
+</section>
+<!-- FOOTER STARTS HERE-->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Products</a>
+            <a href="#">Reviews</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href="#">My Account</a>
+            <a href="#">My Order</a>
+            <a href="#">My Favorite</a>
+        </div>
+        <div class="box">
+            <h3>Locations</h3>
+            <a href="#">India</a>
+            <a href="#">Canada</a>
+            <a href="#">Turkey</a>
+            <a href="#">Malaysia</a>
+            <a href="#">Japan</a>
+        </div>
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#">+123-456-7890</a>
+            <a href="#">info@gmail.com</a>
+            <a href="#">Bhopal, India - 462001</a>
+            <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2023-06/08/full/1686205521-1934.png" alt="credit cards">
+        </div>
+    </div>
+    <div class="credit">Created By <span>XYZ Pvt Ltd</span>&copy; 2024 Your Company. All rights reserved.</div>
+</section>
+<!-- FOOTER ENDS HERE-->
+</body>
+</html>
